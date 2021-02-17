@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 
 export default function App() {
@@ -20,11 +20,11 @@ export default function App() {
     return <Text>No access to camera</Text>;
   }
   return (
-    <View style={styles.container}>
-      <Camera style={styles.camera} type={type}>
-        <View style={styles.buttonContainer}>
+    <View style={{ flex: 1 }}>
+      <Camera style={{ flex: 1 }} type={type}>
+        <View style={{ flex: 1, backgroundColor: "transparent", flexDirection: "row" }}>
           <TouchableOpacity
-            style={styles.button}
+            style={{ flex: 0.1, alignSelf: "flex-end", alignItems: "center" }}
             onPress={() => {
               setType(
                 type === Camera.Constants.Type.back
@@ -32,7 +32,7 @@ export default function App() {
                   : Camera.Constants.Type.back
               );
             }}>
-            <Text style={styles.text}> Flip </Text>
+            <Text style={{ fontSize: 18, marginBottom: 10, color: "white" }}> Flip </Text>
           </TouchableOpacity>
         </View>
       </Camera>

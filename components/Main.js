@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { View, Text } from "react-native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import Icon from "react-native-vector-icons/FontAwesome";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchUser } from "../redux/actions/index";
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 import FeedScreen from "./main/Feed";
 import ProfileScreen from "./main/Profile";
